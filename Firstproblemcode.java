@@ -4,19 +4,16 @@
  * and open the template in the editor.
  */
 package firstproblemcode;
-
 import java.util.Arrays;
 import java.util.Scanner;
 
 /**
  *
  * @author Alexander
- */
-public class Firstproblemcode {
+ */public class Firstproblemcode {
 
     public static void main(String[] args) {
         ValidateNumberOfTrailAndDataTypes();
-
     }
 
     public static void ValidateNumberOfTrailAndDataTypes() {
@@ -25,16 +22,18 @@ public class Firstproblemcode {
         String name;
         String nameinputchar;
         input = new Scanner(System.in);
-        input = new Scanner(System.in);
+
         System.out.print("Enter your Number of trails : ");
         name = input.nextLine();
         System.out.println("Number of trails : " + name);
 
         if (name != "" && !name.matches("^[a-zA-Z]*$")) {
             input = new Scanner(System.in);
+            
+            System.out.println("enter chracter  : ");
             nameinputchar = input.nextLine();
-            System.out.println(" nameinputchar : " + nameinputchar);
-            System.out.println(" Integer.valueOf(g.name) : " + Integer.valueOf(name));
+//            System.out.println(" nameinputchar : " + nameinputchar);
+//            System.out.println(" Integer.valueOf(g.name) : " + Integer.valueOf(name));
 
             if (nameinputchar != "" && !nameinputchar.matches("^[a-zA-Z]*$")) {
                 if (nameinputchar.length() == Integer.valueOf(name)) {
@@ -59,35 +58,37 @@ public class Firstproblemcode {
 
         String[] splited = nameinputchar.split("");
         int[] numbers = new int[splited.length];
-
+        Firstproblemcode p = new Firstproblemcode();
+ 
         for (int i = 0; i < splited.length; i++) {
             numbers[i] = Integer.parseInt(splited[i]);
         }
-        GitResult(numbers);
-
         System.out.println(" Array of splited Numbers : " + Arrays.toString(numbers));
+        p.GitResult(numbers);
 
     }
 
-    public static void GitResult(int[] intArray1) {
+    public void GitResult(int[] intArray1) {
+        System.out.println(" GitResult  ");
         int maxlenght = 0;
         int restlenght = 0;
         int Lukylenghtoftwo = 0;
         int Lukylenghtofthree = 0;
         int Lukylenghtof55 = 0;
         int Lukylenghtof66 = 0;
+        int Lukysseries = 0;
 
 //        int[] intArray1 = {6, 1, 6, 1, 6, 1, 6, 6, 6};
 //        int[] intArray1 = {4, 5, 6, 1, 1, 6, 5, 1, 3, 6, 5, 6, 1, 2, 4, 5, 6, 6};
 //        int[] intArray1 = {5, 6, 6, 1, 1, 1, 6, 6, 6, 2, 6, 6, 3, 4, 4, 1, 6};
         int count = 0;
         int arrlenght = intArray1.length;
-        System.out.println("  arrlenght : " + arrlenght);
+//        System.out.println("  arrlenght : " + arrlenght);
         for (int i = 0; i <= arrlenght - 1; i++) {
 //            for (int j = i + 1; j < intArray1.length; j++) {
-            System.out.println("  iiiii : " + i);
+//            System.out.println("  iiiii : " + i);
             if (i <= arrlenght - 2) {
-                System.out.println("  iiiii of exc 39996655 ::: " + i);
+//                System.out.println("  iiiii of exc 39996655 ::: " + i);
 //                System.out.println("  Integer : " + String.valueOf(Integer.valueOf(String.valueOf(intArray1[i]) + String.valueOf(intArray1[i + 1]) + String.valueOf(intArray1[i + 2]))));
                 if (i == 0) {
                     if (Integer.valueOf(String.valueOf(intArray1[i]) + String.valueOf(intArray1[i + 1]) + String.valueOf(intArray1[i + 2])) == 666
@@ -145,9 +146,9 @@ public class Firstproblemcode {
 
                 }
             }
-
+/////////////////////////////////////////////////////////////////////////////////////////
             if (intArray1[i] != 6) {
-                System.out.println("  iiiii : " + i);
+//                System.out.println("  iiiii : " + i);
                 restlenght++;
 
                 if (restlenght > maxlenght) {
@@ -157,55 +158,54 @@ public class Firstproblemcode {
             } else {
                 restlenght = 0;
             }
+///////////////////////////////////////// ///////////////////////////////////////////
             if (i == arrlenght - 1) {
-                System.out.println("  iiiii kkk : " + i);
+//                System.out.println("  iiiii kkk : " + i);
 
             } else if (i <= arrlenght - 2) {
-                System.out.println("  iiiii ggg: " + i);
+//                System.out.println("  iiiii ggg: " + i);
                 if (i == 0) {
                     if (intArray1[i] == 6 && intArray1[i + 1] == 6 && intArray1[i + 2] != 6) {
                         count++;
-                        System.out.println(" count 7 :: " + count + "---intArray1[i] : " + intArray1[i] + "---intArray1[j] : " + intArray1[i]);
+//                        System.out.println(" count 7 :: " + count + "---intArray1[i] : " + intArray1[i] + "---intArray1[j] : " + intArray1[i]);
 
-                        System.out.println(" count 8 :: " + count);
-
+//                        System.out.println(" count 8 :: " + count);
                     }
                 } else if (i == arrlenght - 2) {
                     if (intArray1[i - 1] != 6 && intArray1[i] == 6 && intArray1[i + 1] == 6) {
                         count++;
-                        System.out.println(" count 9 :: " + count + "---intArray1[i] : " + intArray1[i] + "---intArray1[j] : " + intArray1[i]);
+//                        System.out.println(" count 9 :: " + count + "---intArray1[i] : " + intArray1[i] + "---intArray1[j] : " + intArray1[i]);
 
-                        System.out.println(" count 10 :: " + count);
-
+//                        System.out.println(" count 10 :: " + count);
                     }
                 } else {
                     if (intArray1[i - 1] != 6 && intArray1[i] == 6 && intArray1[i + 1] == 6 && intArray1[i + 2] != 6) {
                         count++;
-                        System.out.println(" count 11 :: " + count + "---intArray1[i] : " + intArray1[i] + "---intArray1[j] : " + intArray1[i]);
-                        System.out.println(" count 12 :: " + count);
+//                        System.out.println(" count 11 :: " + count + "---intArray1[i] : " + intArray1[i] + "---intArray1[j] : " + intArray1[i]);
+//                        System.out.println(" count 12 :: " + count);
 
                     }
                 }
             }
 
-            System.out.println(" count result  :: " + count);
-            System.out.println(" count result  :: " + maxlenght);
-            System.out.println("  Lukylenghtoftwo : " + Lukylenghtoftwo);
-            System.out.println("  Lukylenghtofthree : " + Lukylenghtofthree);
-
-            System.out.println("  Lukylenghtoftwo 66: " + Lukylenghtof66);
-            System.out.println("  Lukylenghtofthree 55: " + Lukylenghtof55);
-
-            System.out.println("  ///////////////////////////////////////////: ");
-
-            System.out.println("  ///////////////////////////////////////////  ::: " + Integer.valueOf(Lukylenghtof55 + Lukylenghtof66));
-
+//            System.out.println("result : " + count);
+//            System.out.println("maxlenght : " + maxlenght);
+//            System.out.println("  Lukylenghtoftwo : " + Lukylenghtoftwo);
+//            System.out.println("  Lukylenghtofthree : " + Lukylenghtofthree);
+//            System.out.println("  Lukylenghtoftwo 66: " + Lukylenghtof66);
+//            System.out.println("  Lukylenghtofthree 55: " + Lukylenghtof55);
+//            System.out.println("  ///////////////////////////////////////////: ");
+//
+//            System.out.println("  ///////////////////////////////////////////  ::: " + Integer.valueOf(Lukylenghtof55 + Lukylenghtof66));
             if (Lukylenghtoftwo == Lukylenghtofthree) {
-                System.out.println("  Lukylenght  111: " + Integer.valueOf(3));
+//                System.out.println("  Luky lenght  111: " + Integer.valueOf(3));
+//                System.out.println("Lukylenght : " + Integer.valueOf(3));
+                Lukysseries = 3;
             } else if (Lukylenghtoftwo > Lukylenghtofthree) {
                 if (Lukylenghtof55 > 0 && Lukylenghtof66 > 0 && Integer.valueOf(Lukylenghtof55 + Lukylenghtof66) > Lukylenghtofthree) {
-                    System.out.println("  Lukylenght  11222: " + Integer.valueOf(2));
-
+//                    System.out.println("  Lukylenght  11222: " + Integer.valueOf(2));
+//                    System.out.println("Lukylenght : " + Integer.valueOf(2));
+                    Lukysseries = 2;
 //                    if (Lukylenghtoftwo == 1) {
 //                        System.out.println("  Lukylenght  111: " + Integer.valueOf(2));
 //                    }
@@ -213,18 +213,27 @@ public class Firstproblemcode {
 //                        System.out.println("  Lukylenght  111: " + Integer.valueOf(2));
 //                    }
                 } else {
-                    System.out.println("  Lukylenght  11333: " + Integer.valueOf(3));
+//                    System.out.println("  Lukylenght  11333: " + Integer.valueOf(3));
+//                    System.out.println("Lukylenght : " + Integer.valueOf(3));
+                    Lukysseries = 3;
                 }
 
             } else if (Lukylenghtofthree > Lukylenghtoftwo) {
                 if (Lukylenghtofthree == 1) {
-                    System.out.println("  Lukylenght  11444: " + Integer.valueOf(1));
+//                    System.out.println("  Lukylenght  11444: " + Integer.valueOf(1));
+                    Lukysseries = 1;
+//                    System.out.println("Lukylenght : " + Integer.valueOf(1));
                 } else if (Lukylenghtofthree > 1) {
-                    System.out.println("  Lukylenght  11555: " + Integer.valueOf(3));
+//                    System.out.println("  Lukylenght  11555: " + Integer.valueOf(3));
+                    Lukysseries = 3;
+//                    System.out.println("Lukylenght : " + Integer.valueOf(3));
                 }
             }
-
         }
 
+        System.out.println("result      :   " + count);
+        System.out.println("maxlenght   :   " + maxlenght);
+        System.out.println("Lukylenght  :   " + Lukysseries);
     }
+
 }
